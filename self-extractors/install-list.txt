@@ -1,0 +1,17 @@
+
+system/vendor/lib/egl/libGLES_mali.so
+system/lib/hw/hwcomposer.poplar.so 
+system/lib/libhi_gfx2d.so
+system/lib/liboverlay.so 
+system/vendor/lib/hw/gralloc.poplar.so
+system/vendor/lib/libion_ext.so
+system/lib/libhi_common.so 
+system/lib/libhi_msp.so 
+system/lib/libhi_vfmw.so 
+system/lib/libOMX_Core.so 
+system/lib/libOMX.hisi.video.decoder.so 
+system/lib/libstagefrighthw.so 
+system/vendor/lib/libhiavplayer.so 
+system/vendor/lib/libhiavplayer_adp.so
+system/vendor/lib/libhiavplayerservice.so
+system/vendor/bin/hiavplayer

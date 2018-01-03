@@ -1,0 +1,12 @@
+# Rules for audio service.
+type hiavplayer, domain;
+
+type hiavplayer_exec, exec_type, file_type;
+
+init_daemon_domain(hiavplayer)
+
+binder_use(hiavplayer)
+binder_service(hiavplayer)
+binder_call(hiavplayer, system_server)
+
+

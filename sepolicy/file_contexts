@@ -1,0 +1,3 @@
+# mtk bluetooth
+/dev/stpbt		u:object_r:uhid_device:s0
+/system/vendor/bin/hiavplayer    u:object_r:hiavplayer_exec:s0

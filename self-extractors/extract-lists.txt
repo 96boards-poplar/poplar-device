@@ -1,0 +1,20 @@
+  hisilicon)
+    TO_EXTRACT="\
+            SYSTEM/lib/egl/libGLES_mali.so \
+            SYSTEM/lib/hwcomposer.poplar.so \           
+            SYSTEM/lib/libhi_gfx2d.so \
+            SYSTEM/lib/liboverlay.so \
+            SYSTEM/lib/libhi_common.so \
+            SYSTEM/lib/libhi_msp.so \
+            SYSTEM/lib/libhi_vfmw.so \
+            SYSTEM/lib/libOMX_Core.so \
+            SYSTEM/lib/libOMX.hisi.video.decoder.so \
+            SYSTEM/lib/libstagefrighthw.so \
+            SYSTEM/vendor/lib/libhiavplayer.so \
+            SYSTEM/vendor/lib/libhiavplayer_adp.so \
+            SYSTEM/vendor/lib/libhiavplayerservice.so \
+            SYSTEM/vendor/bin/hiavplayer \
+            SYSTEM/vendor/lib/libion_ext.so \
+            SYSTEM/vendor/lib/hw/gralloc.poplar.so \
+            "
+    ;;
