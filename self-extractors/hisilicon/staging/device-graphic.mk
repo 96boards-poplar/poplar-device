@@ -4,9 +4,9 @@ PRODUCT_COPY_FILES += \
 
 # hwcomposer
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/hwcomposer.poplar.so:system/lib/hw/hwcomposer.poplar.so \
-    $(LOCAL_PATH)/proprietary/libhi_gfx2d.so:system/lib/libhi_gfx2d.so \
-    $(LOCAL_PATH)/proprietary/liboverlay.so:system/lib/liboverlay.so \
+    $(LOCAL_PATH)/proprietary/hwcomposer.poplar.so:system/vendor/lib/hw/hwcomposer.poplar.so \
+    $(LOCAL_PATH)/proprietary/libhi_gfx2d.so:system/vendor/lib/libhi_gfx2d.so \
+    $(LOCAL_PATH)/proprietary/liboverlay.so:system/vendor/lib/liboverlay.so \
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/gralloc.poplar.so:system/vendor/lib/hw/gralloc.poplar.so \
