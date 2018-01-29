@@ -5,9 +5,9 @@
 1        1     8191     0xf0    none loader
 2     8192    81920     0xda    none android_boot
 3    90112  2097151     0x83    ext4 android_system
-4  2187263 13082625     0x0f    none extended
+4  2187263 12754945     0x0f    none extended
 *  2187263        1      EBR
 5  2187264  2097151     0x83    ext4 android_cache
 *  4284415        1      EBR
-6  4284416 10985472     0x83    ext4 android_user_data
-Total EMMC size is 15269888 512-byte sectors
+6  4284416 10657792     0x83    ext4 android_user_data
+Total EMMC size is 14942208 512-byte sectors

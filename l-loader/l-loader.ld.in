@@ -30,9 +30,16 @@ SECTIONS
 	. = ALIGN(4);
 	.bss : { *(.bss) }
 
+#ifdef RECOVERY
 	. = FIP_BASE;
        .fip : { *(.fip) }
+#endif
 
 	. = ALIGN(4);
        .tail : { *(.tail) }
+
+#ifndef RECOVERY
+	. = FIP_BASE;
+       .fip : { *(.fip) }
+#endif
 }
