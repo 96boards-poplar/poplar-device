@@ -24,12 +24,13 @@ endif
 HW := poplar
 
 # Kernel
-LOCAL_KERNEL := device/hisilicon/poplar-kernel/Image
+LOCAL_KERNEL := device/hisilicon/poplar-kernel/Image-dtb
 PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
 
 # use this a hack to place dtb in to the boot.img
 LOCAL_DTB := device/hisilicon/poplar-kernel/hi3798cv200-poplar.dtb
 PRODUCT_COPY_FILES += $(LOCAL_DTB):2ndbootloader
+PRODUCT_COPY_FILES += $(LOCAL_DTB):hi3798cv200-poplar.dtb
 
 # rootfs
 PRODUCT_COPY_FILES += \

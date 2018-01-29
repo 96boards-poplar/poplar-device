@@ -1,0 +1,7 @@
+# Partition loader
+
+fatload usb 0:1 0x08000000 recovery_files/loader.bin.gz
+unzip 0x08000000 0x10000000 0x001efe00
+mmc write 0x10000000 0x00000001 0x00000f7f
+echo
+
