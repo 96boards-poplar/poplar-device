@@ -29,7 +29,7 @@ loader: fip
 	cd $(ANDROID_BUILD_TOP)/device/hisilicon/poplar/l-loader && \
 	cp $(EDK2_DIR)/Build/Poplar/$(TARGET)_GCC49/FV/bl1.bin atf/ && \
 	cp $(EDK2_DIR)/Build/Poplar/$(TARGET)_GCC49/FV/fip.bin atf/ && \
-	make loader.bin
+	make CROSS_COMPILE=arm-linux-androideabi- loader.bin
 
 clean:
 	cd $(ANDROID_BUILD_TOP)/device/hisilicon/poplar/l-loader && make clean
