@@ -44,11 +44,11 @@ uart_init:
 	str	a3, [a4, #UART01x_FBRD]
 
 	/* 8 bits, 1 stop bit, no parity, fifo enabled. */
-	movw	a3, #112
+	mov	a3, #112
 	str	a3, [a4, #UART01x_LCR_H]
 
 	/* enable */
-	movw	a3, #UART01x_CR_ENABLE
+	ldr	a3, =UART01x_CR_ENABLE
 	str	a3, [a4, #UART01x_CR]
 	bx	lr
 uart_base_addr_L0:

@@ -20,8 +20,9 @@ CC=$(CROSS_COMPILE)gcc
 LD=$(CROSS_COMPILE)ld
 OBJCOPY=$(CROSS_COMPILE)objcopy
 
+CFLAGS := -march=armv7-a
 ifeq ($(RECOVERY),1)
-CFLAGS ?= -DRECOVERY
+CFLAGS += -DRECOVERY
 endif
 
 # Use build date/time and Git commit id to form a version message
