@@ -1,4 +1,5 @@
-# kerenl and dtb - bootimage
+# 1. bootimage
+# 1.1 kernel and dtb
 LOCAL_KERNEL := device/hisilicon/poplar-kernel/Image
 PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
 LOCAL_DTB := device/hisilicon/poplar-kernel/hi3798cv200-poplar.dtb
@@ -6,7 +7,7 @@ LOCAL_DTB := device/hisilicon/poplar-kernel/hi3798cv200-poplar.dtb
 PRODUCT_COPY_FILES += $(LOCAL_KERNEL):dtb
 PRODUCT_COPY_FILES += $(LOCAL_DTB):2ndbootloader
 
-# rootfs
+# 1.2 rootfs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootfs/ueventd.poplar.rc:root/ueventd.poplar.rc \
     $(LOCAL_PATH)/rootfs/fstab.poplar:root/fstab.poplar
@@ -14,7 +15,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootfs/init.poplar.rc:root/init.poplar.rc \
     $(LOCAL_PATH)/rootfs/init.poplar.usb.rc:root/init.poplar.usb.rc \
-
 
 
 # feature declaration
@@ -38,7 +38,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609 \
 
 
-# feature keymaster
+
+# start HAL keymaster >>>>>>>>
 
 
 ## build packages
@@ -46,10 +47,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service \
 
- 
 
 
-# feature graphics
+# start HAL graphics >>>>>>>>
 
 
 ## build packages
@@ -63,20 +63,16 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1 \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
-
- 
 # raw instructions - do I have a better place to go?
 $(call inherit-product, vendor/hisilicon/poplar/device-graphic.mk)
 
 
-# feature audio
-# feature declaration
+
+# start HAL audio >>>>>>>>
+## feature declaration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-## runtime configs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
 
 
 ## build packages
@@ -88,31 +84,32 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     audio.primary.poplar \
+## runtime configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
 
- 
 
 
-# feature media.codec
+# start HAL media.codec >>>>>>>>
+
+
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 
- 
 
 
-# feature bluetooth
+# start HAL bluetooth >>>>>>>>
 
- 
 
- 
 
 
 
 # manifest.xml
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
 
 # vendor raw instructions - does it has a better place to go?
