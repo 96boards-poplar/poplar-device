@@ -67,6 +67,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1 \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
+    android.hardware.drm@1.0-impl \
+
 # raw instructions - do I have a better place to go?
 $(call inherit-product, vendor/hisilicon/poplar/device-graphic.mk)
 
