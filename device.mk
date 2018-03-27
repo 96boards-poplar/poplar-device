@@ -107,6 +107,19 @@ PRODUCT_COPY_FILES += \
 
 
 
+# start HAL drm >>>>>>>>
+
+
+## build packages
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+# raw instructions - do I have a better place to go?
+ifeq ($(TARGET_TEE_IS_OPTEE), true)
+   $(call inherit-product-if-exists, device/hisilicon/poplar/optee-packages.mk)
+endif
+
+
+
 # manifest.xml
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml

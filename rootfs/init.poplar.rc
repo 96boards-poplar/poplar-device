@@ -27,3 +27,14 @@ service hiavplayer /system/vendor/bin/hiavplayer
     class main
     user  system
     group audio
+
+on post-fs-data
+    # create for OP-TEE test
+    mkdir /data/tee 0775 shell shell
+    mkdir /data/tee/optee_armtz 0775 shell shell
+    restorecon_recursive /data/tee
+
+service tee-supplicant /system/bin/tee-supplicant
+    class main
+    user root
+    oneshot
