@@ -16,6 +16,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootfs/init.poplar.rc:root/init.poplar.rc \
     $(LOCAL_PATH)/rootfs/init.poplar.usb.rc:root/init.poplar.usb.rc \
 
+ifeq ($(TARGET_TEE_IS_OPTEE), true)
+# Include OP-TEE packages
+$(call inherit-product-if-exists, device/hisilicon/poplar/optee-packages.mk)
+endif
 
 # feature declaration
 PRODUCT_COPY_FILES += \
