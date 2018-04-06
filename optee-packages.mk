@@ -1,3 +1,4 @@
+# 1. Configration for optee OS
 OPTEE_PLATFORM ?= poplar
 OPTEE_PLATFORM_FLAVOR ?= poplar
 OPTEE_CFG_ARM64_CORE ?= n 
@@ -5,7 +6,11 @@ OPTEE_TA_TARGETS ?= ta_arm32
 OPTEE_OS_DIR ?= optee/optee_os
 OPTEE_EXTRA_FLAGS ?= CFG_TEE_CORE_LOG_LEVEL=3 CFG_TEE_TA_LOG_LEVEL=3 DEBUG=1
 #CROSS_COMPILE64 ?= $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+# BUILD_OPTEE_MK will be used by client app ,e.g xtest and optee-widevine-ref
 BUILD_OPTEE_MK := $(OPTEE_OS_DIR)/mk/aosp_optee.mk
+
+
+# 2. packages
 
 # OP TEE client library and service
 PRODUCT_PACKAGES += libteec \
