@@ -63,8 +63,14 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1 \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
-# raw instructions - do I have a better place to go?
-$(call inherit-product, vendor/hisilicon/poplar/device-graphic.mk)
+## copy packages
+PRODUCT_COPY_FILES += \
+    vendor/hisilicon/poplar/proprietary/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
+    vendor/hisilicon/poplar/proprietary/hwcomposer.poplar.so:system/vendor/lib/hw/hwcomposer.poplar.so \
+    vendor/hisilicon/poplar/proprietary/libhi_gfx2d.so:system/vendor/lib/libhi_gfx2d.so \
+    vendor/hisilicon/poplar/proprietary/liboverlay.so:system/vendor/lib/liboverlay.so \
+    vendor/hisilicon/poplar/proprietary/gralloc.poplar.so:system/vendor/lib/hw/gralloc.poplar.so \
+    vendor/hisilicon/poplar/proprietary/libion_ext.so:system/vendor/lib/libion_ext.so \
 
 
 
@@ -93,6 +99,18 @@ PRODUCT_COPY_FILES += \
 # start HAL media.codec >>>>>>>>
 
 
+## copy packages
+PRODUCT_COPY_FILES += \
+    vendor/hisilicon/poplar/proprietary/libstagefrighthw.so:system/vendor/lib/libstagefrighthw.so \
+    vendor/hisilicon/poplar/proprietary/libhi_common.so:system/vendor/lib/libhi_common.so \
+    vendor/hisilicon/poplar/proprietary/libhi_msp.so:system/vendor/lib/libhi_msp.so \
+    vendor/hisilicon/poplar/proprietary/libhi_vfmw.so:system/vendor/lib/libhi_vfmw.so \
+    vendor/hisilicon/poplar/proprietary/libOMX_Core.so:system/vendor/lib/libOMX_Core.so \
+    vendor/hisilicon/poplar/proprietary/libOMX.hisi.video.decoder.so:system/vendor/lib/libOMX.hisi.video.decoder.so \
+    vendor/hisilicon/poplar/proprietary/libhiavplayer.so:system/vendor/lib/libhiavplayer.so \
+    vendor/hisilicon/poplar/proprietary/libhiavplayer_adp.so:system/vendor/lib/libhiavplayer_adp.so \
+    vendor/hisilicon/poplar/proprietary/libhiavplayerservice.so:system/vendor/lib/libhiavplayerservice.so \
+    vendor/hisilicon/poplar/proprietary/hiavplayer:system/vendor/bin/hiavplayer \
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
@@ -124,6 +142,3 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
-
-# vendor raw instructions - does it has a better place to go?
-$(call inherit-product, vendor/hisilicon/poplar/device-vendor.mk)
