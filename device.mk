@@ -65,12 +65,12 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
 ## copy packages
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
-    vendor/hisilicon/poplar/proprietary/hwcomposer.poplar.so:system/vendor/lib/hw/hwcomposer.poplar.so \
-    vendor/hisilicon/poplar/proprietary/libhi_gfx2d.so:system/vendor/lib/libhi_gfx2d.so \
-    vendor/hisilicon/poplar/proprietary/liboverlay.so:system/vendor/lib/liboverlay.so \
-    vendor/hisilicon/poplar/proprietary/gralloc.poplar.so:system/vendor/lib/hw/gralloc.poplar.so \
-    vendor/hisilicon/poplar/proprietary/libion_ext.so:system/vendor/lib/libion_ext.so \
+    vendor/hisilicon/poplar/proprietary/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLES_mali.so \
+    vendor/hisilicon/poplar/proprietary/hwcomposer.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/hwcomposer.poplar.so \
+    vendor/hisilicon/poplar/proprietary/libhi_gfx2d.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_gfx2d.so \
+    vendor/hisilicon/poplar/proprietary/liboverlay.so:$(TARGET_COPY_OUT_VENDOR)/lib/liboverlay.so \
+    vendor/hisilicon/poplar/proprietary/gralloc.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gralloc.poplar.so \
+    vendor/hisilicon/poplar/proprietary/libion_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libion_ext.so \
 
 
 
@@ -101,16 +101,16 @@ PRODUCT_COPY_FILES += \
 
 ## copy packages
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/libstagefrighthw.so:system/vendor/lib/libstagefrighthw.so \
-    vendor/hisilicon/poplar/proprietary/libhi_common.so:system/vendor/lib/libhi_common.so \
-    vendor/hisilicon/poplar/proprietary/libhi_msp.so:system/vendor/lib/libhi_msp.so \
-    vendor/hisilicon/poplar/proprietary/libhi_vfmw.so:system/vendor/lib/libhi_vfmw.so \
-    vendor/hisilicon/poplar/proprietary/libOMX_Core.so:system/vendor/lib/libOMX_Core.so \
-    vendor/hisilicon/poplar/proprietary/libOMX.hisi.video.decoder.so:system/vendor/lib/libOMX.hisi.video.decoder.so \
-    vendor/hisilicon/poplar/proprietary/libhiavplayer.so:system/vendor/lib/libhiavplayer.so \
-    vendor/hisilicon/poplar/proprietary/libhiavplayer_adp.so:system/vendor/lib/libhiavplayer_adp.so \
-    vendor/hisilicon/poplar/proprietary/libhiavplayerservice.so:system/vendor/lib/libhiavplayerservice.so \
-    vendor/hisilicon/poplar/proprietary/hiavplayer:system/vendor/bin/hiavplayer \
+    vendor/hisilicon/poplar/proprietary/libstagefrighthw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefrighthw.so \
+    vendor/hisilicon/poplar/proprietary/libhi_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_common.so \
+    vendor/hisilicon/poplar/proprietary/libhi_msp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_msp.so \
+    vendor/hisilicon/poplar/proprietary/libhi_vfmw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_vfmw.so \
+    vendor/hisilicon/poplar/proprietary/libOMX_Core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOMX_Core.so \
+    vendor/hisilicon/poplar/proprietary/libOMX.hisi.video.decoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOMX.hisi.video.decoder.so \
+    vendor/hisilicon/poplar/proprietary/libhiavplayer.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer.so \
+    vendor/hisilicon/poplar/proprietary/libhiavplayer_adp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer_adp.so \
+    vendor/hisilicon/poplar/proprietary/libhiavplayerservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayerservice.so \
+    vendor/hisilicon/poplar/proprietary/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer \
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
@@ -140,5 +140,5 @@ endif
 
 # manifest.xml
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+    $(LOCAL_PATH)/manifest.xml:${TARGET_COPY_OUT_VENDOR}/manifest.xml
 

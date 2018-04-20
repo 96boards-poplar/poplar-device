@@ -41,3 +41,5 @@ BOARD_SEPOLICY_DIRS := device/hisilicon/poplar/sepolicy
 TARGET_USES_HWC2 := true
 # build config of feature bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
+
+TARGET_COPY_OUT_VENDOR := system/vendor
