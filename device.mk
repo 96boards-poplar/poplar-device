@@ -111,6 +111,9 @@ PRODUCT_COPY_FILES += \
     vendor/hisilicon/poplar/proprietary/libhiavplayer_adp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer_adp.so \
     vendor/hisilicon/poplar/proprietary/libhiavplayerservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayerservice.so \
     vendor/hisilicon/poplar/proprietary/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer \
+## service init.rc scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/hiavplayer.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hiavplayer.rc \
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
@@ -135,6 +138,9 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_TEE_IS_OPTEE), true)
    $(call inherit-product-if-exists, device/hisilicon/poplar/optee-packages.mk)
 endif
+## service init.rc scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/optee.rc \
 
 
 
