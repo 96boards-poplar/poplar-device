@@ -33,7 +33,7 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOARD_PLATFORM := poplar
 TARGET_BOOTLOADER_BOARD_NAME := poplar 
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=poplar androidboot.selinux=permissive mmz=ddr,0,0,60M firmware_class.path=/system/etc/firmware
+BOARD_KERNEL_CMDLINE := androidboot.hardware=poplar androidboot.selinux=permissive firmware_class.path=/vendor/firmware mmz=ddr,0,0,60M
 
 
 #sepolicy
