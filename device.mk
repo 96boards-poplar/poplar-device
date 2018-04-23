@@ -144,6 +144,50 @@ PRODUCT_COPY_FILES += \
 
 
 
+# start HAL wifi >>>>>>>>
+## feature declaration
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+
+
+## build packages
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    wificond \
+    wificond.rc \
+    libwpa_client \
+    wpa_cli \
+## copy packages
+PRODUCT_COPY_FILES += \
+    vendor/hisilicon/poplar/proprietary/libwifi-hal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwifi-hal.so \
+    vendor/hisilicon/poplar/proprietary/wpa_supplicant:$(TARGET_COPY_OUT_VENDOR)/bin/hw/wpa_supplicant \
+    vendor/hisilicon/poplar/proprietary/hostapd:$(TARGET_COPY_OUT_VENDOR)/bin/hostapd \
+## firmwares
+PRODUCT_COPY_FILES += \
+    vendor/hisilicon/poplar/proprietary/firmware/EEPROM_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668.bin \
+    vendor/hisilicon/poplar/proprietary/firmware/EEPROM_MT7668_e1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668_e1.bin \
+    vendor/hisilicon/poplar/proprietary/firmware/mt7668_patch_e1_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e1_hdr.bin \
+    vendor/hisilicon/poplar/proprietary/firmware/mt7668_patch_e2_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e2_hdr.bin \
+    vendor/hisilicon/poplar/proprietary/firmware/WIFI_RAM_CODE2_USB_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE2_USB_MT7668.bin \
+    vendor/hisilicon/poplar/proprietary/firmware/WIFI_RAM_CODE_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE_MT7668.bin \
+    vendor/hisilicon/poplar/proprietary/firmware/TxPwrLimit_MT76x8.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/TxPwrLimit_MT76x8.dat \
+    vendor/hisilicon/poplar/proprietary/firmware/wifi.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/wifi.cfg \
+## drivers
+PRODUCT_COPY_FILES += \
+    device/hisilicon/poplar-kernel/modules/wlan_mt7668_usb.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wlan_mt7668_usb.ko \
+## service init.rc scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc \
+## runtime configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+## feature wifi properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15 \
+
+
+
 # manifest.xml
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:${TARGET_COPY_OUT_VENDOR}/manifest.xml
