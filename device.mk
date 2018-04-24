@@ -144,6 +144,35 @@ PRODUCT_COPY_FILES += \
 
 
 
+# start HAL bt >>>>>>>>
+## feature declaration
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+
+
+## build packages
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth@1.0-service.rc \
+    android.hardware.bluetooth@1.0-impl \
+## copy packages
+PRODUCT_COPY_FILES += \
+    vendor/hisilicon/poplar/proprietary/audio.a2dp.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/audio.a2dp.default.so \
+    vendor/hisilicon/poplar/proprietary/bluetooth.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/bluetooth.default.so \
+    vendor/hisilicon/poplar/proprietary/libbluetooth_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbluetooth_mtk.so \
+    vendor/hisilicon/poplar/proprietary/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbt-vendor.so \
+## firmwares
+PRODUCT_COPY_FILES += \
+## drivers
+PRODUCT_COPY_FILES += \
+    device/hisilicon/poplar-kernel/modules/btmtk_usb.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/btmtk_usb.ko \
+## service init.rc scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bt_mkt.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/bt_mkt.rc \
+
+
+
 # start HAL wifi >>>>>>>>
 ## feature declaration
 PRODUCT_COPY_FILES += \
