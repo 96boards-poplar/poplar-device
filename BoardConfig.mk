@@ -42,7 +42,5 @@ BOARD_SEPOLICY_DIRS := device/hisilicon/poplar/sepolicy
 # HAL's build config
 # build config of feature graphics
 TARGET_USES_HWC2 := true
-# build config of feature bluetooth
-BOARD_HAVE_BLUETOOTH_BCM := true
 
 TARGET_COPY_OUT_VENDOR := vendor

@@ -122,12 +122,6 @@ PRODUCT_COPY_FILES += \
 
 
 
-# start HAL bluetooth >>>>>>>>
-
-
-
-
-
 # start HAL drm >>>>>>>>
 
 
