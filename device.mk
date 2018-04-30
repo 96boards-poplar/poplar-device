@@ -186,6 +186,8 @@ PRODUCT_PACKAGES += \
     wificond.rc \
     libwpa_client \
     wpa_cli \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl \
 ## copy packages
 PRODUCT_COPY_FILES += \
     vendor/hisilicon/poplar/proprietary/libwifi-hal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwifi-hal.so \
