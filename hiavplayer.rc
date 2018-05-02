@@ -1,5 +1,5 @@
 
-service hiavplayer /system/vendor/bin/hiavplayer 
+service hiavplayer /vendor/bin/hiavplayer 
     class main
     user  system
     group audio
