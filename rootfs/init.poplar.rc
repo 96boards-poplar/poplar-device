@@ -1,12 +1,11 @@
 import init.${ro.hardware}.usb.rc
 
 on init
-    # mount debugfs
     mount debugfs /sys/kernel/debug /sys/kernel/debug
-
     # switch USB to peripheral
     write /sys/kernel/debug/hisi_inno_phy/role "peripheral"
 
 on fs
     mount_all ./fstab.poplar
     swapon_all ./fstab.poplar
+
