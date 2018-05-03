@@ -176,6 +176,7 @@ PRODUCT_COPY_FILES += \
 ## build packages
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    android.hardware.wifi.supplicant@1.0 \
     wificond \
     wificond.rc \
     libwpa_client \
