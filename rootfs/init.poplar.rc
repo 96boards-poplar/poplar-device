@@ -1,9 +1,5 @@
 import init.${ro.hardware}.usb.rc
 
-on early-init
-# copy from goldfish
-    write /proc/sys/vm/min_free_kbytes 10240
-
 on init
     # mount debugfs
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -14,12 +10,3 @@ on init
 on fs
     mount_all ./fstab.poplar
     swapon_all ./fstab.poplar
-
-on post-fs-data
-    # add your action here
-
-on boot
-    setprop persist.adb.tcp.port 5555
-    chmod 777 /dev/ttyAMA2
-    chmod 777 /sys/class/rfkill/rfkill0/state
-
