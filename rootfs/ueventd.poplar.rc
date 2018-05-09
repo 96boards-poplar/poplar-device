@@ -1,5 +1,10 @@
 
 
+# device nodes for HAl bt
+/dev/stpbt                       0666  bluetooth  bluetooth
+# device nodes for HAl drm
+/dev/tee0                        0666  shell      shell
+/dev/teepriv0                    0666  shell      shell
 # device nodes for HAl graphics
 /dev/mali*                       0666  system     graphics
 /dev/graphics/fb*                0666  system     graphics
@@ -21,8 +26,3 @@
 /dev/hi_vo                       0666  system     audio
 /dev/hi_vpss                     0666  system     audio
 /dev/mmz_userdev                 0666  system     audio
-# device nodes for HAl drm
-/dev/tee0                        0666  shell      shell
-/dev/teepriv0                    0666  shell      shell
-# device nodes for HAl bt
-/dev/stpbt                       0666  bluetooth  bluetooth
