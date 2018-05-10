@@ -26,3 +26,6 @@
 /dev/hi_vo                       0666  system     audio
 /dev/hi_vpss                     0666  system     audio
 /dev/mmz_userdev                 0666  system     audio
+/dev/hi_mem                      0666  system     mediadrm
+/dev/hi_omxvdec                  0666  system     mediadrm
+/dev/hi_vfmw                     0666  system     mediadrm
