@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
     device/hisilicon/poplar-kernel/modules/btmtk_usb.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/btmtk_usb.ko \
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bt_mkt.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/bt_mkt.rc \
+    $(LOCAL_PATH)/bt_mtk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/bt_mtk.rc \
 
 
 
