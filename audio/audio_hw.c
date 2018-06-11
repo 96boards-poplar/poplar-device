@@ -128,7 +128,6 @@ static int out_set_sample_rate(struct audio_stream *stream, uint32_t rate)
 static size_t out_get_buffer_size(const struct audio_stream *stream)
 {
     ALOGV("out_get_buffer_size: %d", 4096);
-    struct alsa_stream_out *out = (struct alsa_stream_out *)stream;
 
     /* return the closest majoring multiple of 16 frames, as
      * audioflinger expects audio buffers to be a multiple of 16 frames */
@@ -196,7 +195,6 @@ static int out_set_parameters(struct audio_stream *stream, const char *kvpairs)
     struct alsa_stream_out *out = (struct alsa_stream_out *)stream;
     struct alsa_audio_device *adev = out->dev;
     struct str_parms *parms;
-    char *str;
     char value[32];
     int ret, val = 0;
 
@@ -247,7 +245,6 @@ static ssize_t out_write(struct audio_stream_out *stream, const void* buffer,
     struct alsa_audio_device *adev = out->dev;
     size_t frame_size = audio_stream_out_frame_size(stream);
     size_t out_frames = bytes / frame_size;
-    int kernel_frames;
 
     /* acquiring hw device mutex systematically is useful if a low priority thread is waiting
      * on the output stream mutex - e.g. executing select_mode() while holding the hw device
@@ -586,9 +583,7 @@ static int adev_open_input_stream(struct audio_hw_device *dev,
 {
     ALOGV("adev_open_input_stream...");
 
-    struct stub_audio_device *ladev = (struct stub_audio_device *)dev;
     struct stub_stream_in *in;
-    int ret;
 
     in = (struct stub_stream_in *)calloc(1, sizeof(struct stub_stream_in));
     if (!in)
@@ -640,7 +635,6 @@ static int adev_open(const hw_module_t* module, const char* name,
     ALOGV("adev_open: %s", name);
 
     struct alsa_audio_device *adev;
-    int ret;
 
     if (strcmp(name, AUDIO_HARDWARE_INTERFACE) != 0)
         return -EINVAL;
