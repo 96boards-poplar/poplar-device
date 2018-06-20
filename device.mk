@@ -75,10 +75,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
 ## copy packages
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/audio.a2dp.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/audio.a2dp.default.so \
-    vendor/hisilicon/poplar/proprietary/bluetooth.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/bluetooth.default.so \
-    vendor/hisilicon/poplar/proprietary/libbluetooth_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbluetooth_mtk.so \
-    vendor/hisilicon/poplar/proprietary/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbt-vendor.so \
+    $(LOCAL_PATH)/proprietary/mediatek/audio.a2dp.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/audio.a2dp.default.so \
+    $(LOCAL_PATH)/proprietary/mediatek/bluetooth.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/bluetooth.default.so \
+    $(LOCAL_PATH)/proprietary/mediatek/libbluetooth_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbluetooth_mtk.so \
+    $(LOCAL_PATH)/proprietary/mediatek/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbt-vendor.so \
 ## firmwares
 PRODUCT_COPY_FILES += \
 ## drivers
@@ -122,12 +122,12 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
 ## copy packages
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLES_mali.so \
-    vendor/hisilicon/poplar/proprietary/hwcomposer.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/hwcomposer.poplar.so \
-    vendor/hisilicon/poplar/proprietary/libhi_gfx2d.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_gfx2d.so \
-    vendor/hisilicon/poplar/proprietary/liboverlay.so:$(TARGET_COPY_OUT_VENDOR)/lib/liboverlay.so \
-    vendor/hisilicon/poplar/proprietary/gralloc.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gralloc.poplar.so \
-    vendor/hisilicon/poplar/proprietary/libion_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libion_ext.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLES_mali.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/hwcomposer.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/hwcomposer.poplar.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhi_gfx2d.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_gfx2d.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/overlay.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/overlay.poplar.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/gralloc.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gralloc.poplar.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libion_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libion_ext.so \
 
 
 
@@ -146,16 +146,16 @@ PRODUCT_PACKAGES += \
 
 ## copy packages
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/libstagefrighthw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefrighthw.so \
-    vendor/hisilicon/poplar/proprietary/libhi_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_common.so \
-    vendor/hisilicon/poplar/proprietary/libhi_msp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_msp.so \
-    vendor/hisilicon/poplar/proprietary/libhi_vfmw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_vfmw.so \
-    vendor/hisilicon/poplar/proprietary/libOMX_Core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOMX_Core.so \
-    vendor/hisilicon/poplar/proprietary/libOMX.hisi.video.decoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOMX.hisi.video.decoder.so \
-    vendor/hisilicon/poplar/proprietary/libhiavplayer.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer.so \
-    vendor/hisilicon/poplar/proprietary/libhiavplayer_adp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer_adp.so \
-    vendor/hisilicon/poplar/proprietary/libhiavplayerservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayerservice.so \
-    vendor/hisilicon/poplar/proprietary/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer \
+    $(LOCAL_PATH)/proprietary/hisilicon/libstagefrighthw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefrighthw.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhi_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_common.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhi_msp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_msp.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhi_vfmw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_vfmw.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libOMX_Core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOMX_Core.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libOMX.hisi.video.decoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOMX.hisi.video.decoder.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhiavplayer.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhiavplayer_adp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer_adp.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libhiavplayerservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayerservice.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer \
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/hiavplayer.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hiavplayer.rc \
@@ -185,19 +185,19 @@ PRODUCT_PACKAGES += \
     libkeystore-wifi-hidl \
 ## copy packages
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/libwifi-hal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwifi-hal.so \
-    vendor/hisilicon/poplar/proprietary/wpa_supplicant:$(TARGET_COPY_OUT_VENDOR)/bin/hw/wpa_supplicant \
-    vendor/hisilicon/poplar/proprietary/hostapd:$(TARGET_COPY_OUT_VENDOR)/bin/hostapd \
+    $(LOCAL_PATH)/proprietary/mediatek/libwifi-hal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwifi-hal.so \
+    $(LOCAL_PATH)/proprietary/mediatek/wpa_supplicant:$(TARGET_COPY_OUT_VENDOR)/bin/hw/wpa_supplicant \
+    $(LOCAL_PATH)/proprietary/mediatek/hostapd:$(TARGET_COPY_OUT_VENDOR)/bin/hostapd \
 ## firmwares
 PRODUCT_COPY_FILES += \
-    vendor/hisilicon/poplar/proprietary/firmware/EEPROM_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668.bin \
-    vendor/hisilicon/poplar/proprietary/firmware/EEPROM_MT7668_e1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668_e1.bin \
-    vendor/hisilicon/poplar/proprietary/firmware/mt7668_patch_e1_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e1_hdr.bin \
-    vendor/hisilicon/poplar/proprietary/firmware/mt7668_patch_e2_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e2_hdr.bin \
-    vendor/hisilicon/poplar/proprietary/firmware/WIFI_RAM_CODE2_USB_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE2_USB_MT7668.bin \
-    vendor/hisilicon/poplar/proprietary/firmware/WIFI_RAM_CODE_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE_MT7668.bin \
-    vendor/hisilicon/poplar/proprietary/firmware/TxPwrLimit_MT76x8.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/TxPwrLimit_MT76x8.dat \
-    vendor/hisilicon/poplar/proprietary/firmware/wifi.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/wifi.cfg \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/EEPROM_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668.bin \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/EEPROM_MT7668_e1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668_e1.bin \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/mt7668_patch_e1_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e1_hdr.bin \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/mt7668_patch_e2_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e2_hdr.bin \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/WIFI_RAM_CODE2_USB_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE2_USB_MT7668.bin \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/WIFI_RAM_CODE_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE_MT7668.bin \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/TxPwrLimit_MT76x8.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/TxPwrLimit_MT76x8.dat \
+    $(LOCAL_PATH)/proprietary/mediatek/firmware/wifi.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/wifi.cfg \
 ## drivers
 PRODUCT_COPY_FILES += \
     device/hisilicon/poplar-kernel/modules/wlan_mt7668_usb.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wlan_mt7668_usb.ko \
