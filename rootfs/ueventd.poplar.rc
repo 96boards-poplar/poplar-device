@@ -9,6 +9,7 @@
 /dev/mali*                       0666  system     graphics
 /dev/graphics/fb*                0666  system     graphics
 /dev/ion                         0666  system     graphics
+/dev/hi_gfx2d                    0666  system     graphics
 # device nodes for HAl media.codec
 /dev/hi_adec                     0666  system     audio
 /dev/hi_adsp                     0666  system     audio
