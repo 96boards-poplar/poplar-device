@@ -75,18 +75,12 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
 ## copy packages
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/mediatek/audio.a2dp.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/audio.a2dp.default.so \
-    $(LOCAL_PATH)/proprietary/mediatek/bluetooth.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/bluetooth.default.so \
-    $(LOCAL_PATH)/proprietary/mediatek/libbluetooth_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbluetooth_mtk.so \
-    $(LOCAL_PATH)/proprietary/mediatek/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbt-vendor.so \
 ## firmwares
 PRODUCT_COPY_FILES += \
 ## drivers
 PRODUCT_COPY_FILES += \
-    device/hisilicon/poplar-kernel/modules/btmtk_usb.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/btmtk_usb.ko \
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bt_mtk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/bt_mtk.rc \
 
 
 
@@ -185,28 +179,14 @@ PRODUCT_PACKAGES += \
     libkeystore-wifi-hidl \
 ## copy packages
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/mediatek/libwifi-hal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwifi-hal.so \
-    $(LOCAL_PATH)/proprietary/mediatek/wpa_supplicant:$(TARGET_COPY_OUT_VENDOR)/bin/hw/wpa_supplicant \
-    $(LOCAL_PATH)/proprietary/mediatek/hostapd:$(TARGET_COPY_OUT_VENDOR)/bin/hostapd \
 ## firmwares
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/EEPROM_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668.bin \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/EEPROM_MT7668_e1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EEPROM_MT7668_e1.bin \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/mt7668_patch_e1_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e1_hdr.bin \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/mt7668_patch_e2_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt7668_patch_e2_hdr.bin \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/WIFI_RAM_CODE2_USB_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE2_USB_MT7668.bin \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/WIFI_RAM_CODE_MT7668.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE_MT7668.bin \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/TxPwrLimit_MT76x8.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/TxPwrLimit_MT76x8.dat \
-    $(LOCAL_PATH)/proprietary/mediatek/firmware/wifi.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/wifi.cfg \
 ## drivers
 PRODUCT_COPY_FILES += \
-    device/hisilicon/poplar-kernel/modules/wlan_mt7668_usb.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wlan_mt7668_usb.ko \
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc \
 ## runtime configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
 ## feature wifi properties
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \

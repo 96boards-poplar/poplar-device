@@ -1,4 +1,0 @@
-
-on boot
-    insmod /vendor/lib/modules/btmtk_usb.ko
-
