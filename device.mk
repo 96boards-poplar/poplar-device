@@ -14,7 +14,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootfs/init.poplar.rc:root/init.poplar.rc \
-    $(LOCAL_PATH)/rootfs/init.poplar.usb.rc:root/init.poplar.usb.rc \
+    $(LOCAL_PATH)/rootfs/init.poplar.usb.rc:root/init.poplar.usb.rc
 
 
 # feature declaration
@@ -24,7 +24,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
+
 
 # framework properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -35,17 +36,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=2m \
     ro.sf.lcd_density=160 \
-    ro.opengles.version=196609 \
-
+    ro.opengles.version=196609
 
 
 # start HAL audio >>>>>>>>
 ## feature declaration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml \
-    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-
-
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 ## build packages
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -55,32 +53,26 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    audio.primary.poplar \
+    audio.primary.poplar
 ## runtime configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
-
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 
 # start HAL drm >>>>>>>>
-
-
 ## build packages
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-impl
 # raw instructions - do I have a better place to go?
 ifeq ($(TARGET_TEE_IS_OPTEE), true)
    $(call inherit-product-if-exists, device/hisilicon/poplar/optee-packages.mk)
 endif
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/optee.rc \
-
+    $(LOCAL_PATH)/optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/optee.rc
 
 
 # start HAL graphics >>>>>>>>
-
-
 ## build packages
 PRODUCT_PACKAGES += \
     libion \
@@ -91,7 +83,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1 \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-service
 ## copy packages
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/hisilicon/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLES_mali.so \
@@ -99,25 +91,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/hisilicon/libhi_gfx2d.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhi_gfx2d.so \
     $(LOCAL_PATH)/proprietary/hisilicon/overlay.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/overlay.poplar.so \
     $(LOCAL_PATH)/proprietary/hisilicon/gralloc.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gralloc.poplar.so \
-    $(LOCAL_PATH)/proprietary/hisilicon/libion_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libion_ext.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libion_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libion_ext.so
 
 # Property required by HiSilicon gralloc
-PRODUCT_PROPERTY_OVERRIDES += ro.config.build.name=poplar.androidp
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.build.name=poplar.androidp
 
 
 # start HAL keymaster >>>>>>>>
-
-
 ## build packages
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service \
-
+    android.hardware.keymaster@3.0-service
 
 
 # start HAL media.codec >>>>>>>>
-
-
 ## copy packages
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/hisilicon/libstagefrighthw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefrighthw.so \
@@ -129,27 +117,27 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/hisilicon/libhiavplayer.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer.so \
     $(LOCAL_PATH)/proprietary/hisilicon/libhiavplayer_adp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayer_adp.so \
     $(LOCAL_PATH)/proprietary/hisilicon/libhiavplayerservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhiavplayerservice.so \
-    $(LOCAL_PATH)/proprietary/hisilicon/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer \
+    $(LOCAL_PATH)/proprietary/hisilicon/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/hiavplayer.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hiavplayer.rc \
+    $(LOCAL_PATH)/hiavplayer.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hiavplayer.rc
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml
 
 
 # start HAL bt >>>>>>>>
 ## feature declaration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 ## build packages
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-service.rc \
-    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-impl
 ## copy packages
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/bt-wifi/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbt-vendor.so
@@ -183,21 +171,18 @@ PRODUCT_PACKAGES += \
 ## config files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf \
+    $(LOCAL_PATH)/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf
 ## drivers
 PRODUCT_COPY_FILES += \
     device/hisilicon/poplar-kernel/modules/rtl8822bu.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/rtl8822bu.ko
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc \
-## runtime configs
-PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc
 ## feature wifi properties
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
+    wifi.supplicant_scan_interval=15
 
 
 # manifest.xml
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
-
