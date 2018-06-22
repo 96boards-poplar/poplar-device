@@ -61,29 +61,6 @@ PRODUCT_COPY_FILES += \
 
 
 
-# start HAL bt >>>>>>>>
-## feature declaration
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-
-
-## build packages
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-service \
-    android.hardware.bluetooth@1.0-service.rc \
-    android.hardware.bluetooth@1.0-impl \
-## copy packages
-PRODUCT_COPY_FILES += \
-## firmwares
-PRODUCT_COPY_FILES += \
-## drivers
-PRODUCT_COPY_FILES += \
-## service init.rc scripts
-PRODUCT_COPY_FILES += \
-
-
-
 # start HAL drm >>>>>>>>
 
 
@@ -160,13 +137,30 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 
 
+# start HAL bt >>>>>>>>
+## feature declaration
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+## build packages
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth@1.0-service.rc \
+    android.hardware.bluetooth@1.0-impl \
+## copy packages
+PRODUCT_COPY_FILES += \
+## firmwares
+PRODUCT_COPY_FILES += \
+## drivers
+PRODUCT_COPY_FILES += \
+## service init.rc scripts
+PRODUCT_COPY_FILES += \
+
 
 # start HAL wifi >>>>>>>>
 ## feature declaration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-
-
 ## build packages
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -191,7 +185,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
-
 
 
 # manifest.xml
