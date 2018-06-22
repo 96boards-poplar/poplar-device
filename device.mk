@@ -196,6 +196,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 
 # manifest.xml
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:${TARGET_COPY_OUT_VENDOR}/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
