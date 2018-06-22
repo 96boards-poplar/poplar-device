@@ -100,6 +100,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/hisilicon/gralloc.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/gralloc.poplar.so \
     $(LOCAL_PATH)/proprietary/hisilicon/libion_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libion_ext.so \
 
+# Property required by HiSilicon gralloc
+PRODUCT_PROPERTY_OVERRIDES += ro.config.build.name=poplar.androidp
 
 
 # start HAL keymaster >>>>>>>>
