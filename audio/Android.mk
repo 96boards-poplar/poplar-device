@@ -22,10 +22,11 @@ LOCAL_PATH := $(call my-dir)
 # required type is 'primary'. Other possibilites are 'a2dp', 'usb', etc.
 include $(CLEAR_VARS)
 
+LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_MODULE := audio.primary.poplar
-LOCAL_MODULE_PATH_32 := $(TARGET_OUT_VENDOR)/lib
-LOCAL_MODULE_PATH_64 := $(TARGET_OUT_VENDOR)/lib64
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+
 LOCAL_SRC_FILES := audio_hw.c
 LOCAL_SHARED_LIBRARIES := liblog libcutils libtinyalsa
 LOCAL_CFLAGS := -Wno-unused-parameter
