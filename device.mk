@@ -149,36 +149,44 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
 ## copy packages
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/bt-wifi/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbt-vendor.so
+## config files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bluetooth/rtkbt.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/rtkbt.conf
 ## firmwares
 PRODUCT_COPY_FILES += \
-## drivers
-PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/bt-wifi/rtl8822b_config:$(TARGET_COPY_OUT_VENDOR)/firmware/rtl8822b_config \
+    $(LOCAL_PATH)/proprietary/bt-wifi/rtl8822b_fw:$(TARGET_COPY_OUT_VENDOR)/firmware/rtl8822b_fw
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bluetooth/bt.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/bt.rc
 
 
 # start HAL wifi >>>>>>>>
 ## feature declaration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 ## build packages
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    android.hardware.wifi.supplicant@1.0 \
     wificond \
     wificond.rc \
     libwpa_client \
     wpa_cli \
-    libkeystore-engine-wifi-hidl \
-    libkeystore-wifi-hidl \
-## copy packages
+    libwifi-hal \
+    hostapd \
+    wpa_supplicant
+## config files
 PRODUCT_COPY_FILES += \
-## firmwares
-PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf \
 ## drivers
 PRODUCT_COPY_FILES += \
+    device/hisilicon/poplar-kernel/modules/rtl8822bu.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/rtl8822bu.ko
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc \
 ## runtime configs
 PRODUCT_COPY_FILES += \
 ## feature wifi properties
