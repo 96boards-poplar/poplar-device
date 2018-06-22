@@ -45,3 +45,7 @@ BOARD_SEPOLICY_DIRS := device/hisilicon/poplar/sepolicy
 TARGET_USES_HWC2 := true
 
 TARGET_COPY_OUT_VENDOR := vendor
+
+# Enable Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+BOARD_VNDK_VERSION := current

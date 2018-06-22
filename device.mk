@@ -10,7 +10,7 @@ PRODUCT_COPY_FILES += $(LOCAL_DTB):2ndbootloader
 # 1.2 rootfs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootfs/ueventd.poplar.rc:root/ueventd.poplar.rc \
-    $(LOCAL_PATH)/rootfs/fstab.poplar:root/fstab.poplar
+    $(LOCAL_PATH)/rootfs/fstab.poplar:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.poplar
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootfs/init.poplar.rc:root/init.poplar.rc \
@@ -186,3 +186,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # manifest.xml
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
+# VNDK libraries
+PRODUCT_PACKAGES += vndk_package
