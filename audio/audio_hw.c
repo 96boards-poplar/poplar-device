@@ -23,6 +23,7 @@
 #include <stdint.h>
 #include <sys/time.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include <log/log.h>
 #include <cutils/str_parms.h>
