@@ -1,6 +1,5 @@
 
 on boot
-    insmod /vendor/lib/modules/rtl8822bu.ko ifname=wlan0 if2name=p2p0
     setprop wlan.driver.status ok
 
 on post-fs-data

@@ -172,9 +172,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf
-## drivers
-PRODUCT_COPY_FILES += \
-    device/hisilicon/poplar-kernel/modules/rtl8822bu.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/rtl8822bu.ko
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc
