@@ -9,3 +9,8 @@ on fs
     mount_all ./fstab.poplar
     swapon_all ./fstab.poplar
 
+on property:persist.adb.over.usb=0
+    write /sys/kernel/debug/hisi_inno_phy/role "host"
+
+on property:persist.adb.over.usb=1
+    write /sys/kernel/debug/hisi_inno_phy/role "peripheral"
