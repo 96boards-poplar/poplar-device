@@ -19,6 +19,7 @@ service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
      class main
      user wifi
      group wifi net_raw net_admin
+     capabilities NET_RAW NET_ADMIN
      writepid /data/vendor/misc/wifi/wpa_supplicant.pid
      disabled
      oneshot
