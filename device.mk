@@ -9,12 +9,12 @@ PRODUCT_COPY_FILES += $(LOCAL_DTB):2ndbootloader
 
 # 1.2 rootfs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootfs/ueventd.poplar.rc:root/ueventd.poplar.rc \
-    $(LOCAL_PATH)/rootfs/fstab.poplar:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.poplar
+    $(LOCAL_PATH)/vendor/ueventd.poplar.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(LOCAL_PATH)/vendor/fstab.poplar:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.poplar
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootfs/init.poplar.rc:root/init.poplar.rc \
-    $(LOCAL_PATH)/rootfs/init.poplar.usb.rc:root/init.poplar.usb.rc
+    $(LOCAL_PATH)/vendor/init.poplar.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.poplar.rc \
+    $(LOCAL_PATH)/vendor/init.poplar.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.poplar.usb.rc
 
 
 # feature declaration
