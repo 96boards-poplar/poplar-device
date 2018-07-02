@@ -120,7 +120,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/proprietary/hisilicon/hiavplayer:$(TARGET_COPY_OUT_VENDOR)/bin/hiavplayer
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/hiavplayer.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hiavplayer.rc
+    $(LOCAL_PATH)/vendor/hiavplayer.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hiavplayer.rc
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
