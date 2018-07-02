@@ -65,11 +65,11 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
 # raw instructions - do I have a better place to go?
 ifeq ($(TARGET_TEE_IS_OPTEE), true)
-   $(call inherit-product-if-exists, device/hisilicon/poplar/optee-packages.mk)
+   $(call inherit-product-if-exists, device/hisilicon/poplar/optee/optee-packages.mk)
 endif
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/optee.rc
+    $(LOCAL_PATH)/optee/optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/optee.rc
 
 
 # start HAL graphics >>>>>>>>
