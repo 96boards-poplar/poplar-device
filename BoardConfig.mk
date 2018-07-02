@@ -34,6 +34,7 @@ TARGET_BOARD_PLATFORM := poplar
 TARGET_BOOTLOADER_BOARD_NAME := poplar 
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=poplar androidboot.selinux=permissive firmware_class.path=/vendor/firmware mmz=ddr,0,0,60M
+BOARD_KERNEL_CMDLINE += printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += blkdevparts=mmcblk1:4193792@512(loader),40m(boot),1610612224(system),5993660928,268434944@1580m(vendor),268434944@1836m(cache),5364m@2092m(userdata)
 
 
