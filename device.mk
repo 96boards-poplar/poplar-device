@@ -52,8 +52,11 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.0-impl \
     audio.a2dp.default \
     audio.usb.default \
-    audio.r_submix.default \
-    audio.primary.poplar
+    audio.r_submix.default
+## copy packages
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/proprietary/hisilicon/audio.primary.poplar.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.poplar.so \
+    $(LOCAL_PATH)/proprietary/hisilicon/libHA.AUDIO.PCM.decode.so:$(TARGET_COPY_OUT_VENDOR)/lib/libHA.AUDIO.PCM.decode.so
 ## runtime configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
