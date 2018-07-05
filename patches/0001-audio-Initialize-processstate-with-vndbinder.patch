@@ -1,0 +1,56 @@
+From b09601b4ca93eb87efc3aa2ca48e24b1971bd90e Mon Sep 17 00:00:00 2001
+From: z00217964 <z00217964@notesmail.huawei.com>
+Date: Mon, 4 Sep 2017 18:52:36 +0800
+Subject: [PATCH] audio: Initialize processstate with vndbinder
+
+Initialize processtate with vndbinder to allow
+vendor components to talk via vndbinder
+
+Signed-off-by: Haynes Mathew George <hgeorge@codeaurora.org>
+[back ported from a57f41d58cf61a in PEA repository]
+Signed-off-by: Jiancheng Xue <xuejiancheng@hisilicon.com>
+
+Change-Id: I840c567f7279877761402dc3dbc7ec3e4ff3c1dd
+---
+ audio/2.0/default/Android.mk  | 1 +
+ audio/2.0/default/service.cpp | 5 +++++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/audio/2.0/default/Android.mk b/audio/2.0/default/Android.mk
+index 3587d60..3c0e0aa 100644
+--- a/audio/2.0/default/Android.mk
++++ b/audio/2.0/default/Android.mk
+@@ -70,6 +70,7 @@ LOCAL_SRC_FILES := \
+ LOCAL_CFLAGS := -Wall -Werror
+ 
+ LOCAL_SHARED_LIBRARIES := \
++    libbinder \
+     libhidlbase \
+     libhidltransport \
+     liblog \
+diff --git a/audio/2.0/default/service.cpp b/audio/2.0/default/service.cpp
+index 2906523..ba7c5ec 100644
+--- a/audio/2.0/default/service.cpp
++++ b/audio/2.0/default/service.cpp
+@@ -16,6 +16,7 @@
+ 
+ #define LOG_TAG "audiohalservice"
+ 
++#include <binder/ProcessState.h>
+ #include <android/hardware/audio/2.0/IDevicesFactory.h>
+ #include <android/hardware/audio/effect/2.0/IEffectsFactory.h>
+ #include <android/hardware/bluetooth/a2dp/1.0/IBluetoothAudioOffload.h>
+@@ -36,6 +37,10 @@ using android::hardware::bluetooth::a2dp::V1_0::IBluetoothAudioOffload;
+ using android::OK;
+ 
+ int main(int /* argc */, char* /* argv */ []) {
++    android::ProcessState::initWithDriver("/dev/vndbinder");
++    // start a threadpool for vndbinder interactions
++    android::ProcessState::self()->startThreadPool();
++
+     configureRpcThreadpool(16, true /*callerWillJoin*/);
+     android::status_t status;
+     status = registerPassthroughServiceImplementation<IDevicesFactory>();
+-- 
+2.7.4
+
