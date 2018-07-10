@@ -45,13 +45,10 @@ BOARD_SEPOLICY_DIRS := device/hisilicon/poplar/sepolicy
 # build config of feature graphics
 TARGET_USES_HWC2 := true
 
-# wifi: reuse bcmdhd HAL
-BOARD_WLAN_DEVICE := bcmdhd
+# wifi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 
 TARGET_COPY_OUT_VENDOR := vendor
 

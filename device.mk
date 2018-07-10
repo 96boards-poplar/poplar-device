@@ -164,14 +164,14 @@ PRODUCT_PACKAGES += \
     wificond \
     wificond.rc \
     libwpa_client \
-    wpa_cli \
-    libwifi-hal \
-    hostapd \
-    wpa_supplicant
+    wpa_cli
 ## config files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf
+    $(LOCAL_PATH)/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf \
+    $(LOCAL_PATH)/proprietary/bt-wifi/libwifi-hal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwifi-hal.so \
+    $(LOCAL_PATH)/proprietary/bt-wifi/wpa_supplicant:$(TARGET_COPY_OUT_VENDOR)/bin/hw/wpa_supplicant \
+    $(LOCAL_PATH)/proprietary/bt-wifi/hostapd:$(TARGET_COPY_OUT_VENDOR)/bin/hostapd
 ## service init.rc scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc
